@@ -30,6 +30,14 @@ export const createLinkedList = () => {
     console.log(head);
   };
 
+  const getHead = () => {
+    return head;
+  };
+
+  const getTail = () => {
+    return tail;
+  };
+
   const size = () => {
     let count = 0;
     let current = head;
@@ -38,13 +46,36 @@ export const createLinkedList = () => {
       count++;
       current = current.next;
     }
-    console.log(count);
+    return count;
+  };
+
+  const at = (i) => {
+    if (i < 0 || !Number.isInteger(i)) {
+      return null;
+    }
+
+    let count = 0;
+    let current = head;
+
+    while (current) {
+      if (count === i) {
+        return current;
+      }
+
+      current = current.next;
+      count++;
+    }
+
+    return null;
   };
 
   return {
     prepend,
     append,
     print,
+    getHead,
+    getTail,
     size,
+    at,
   };
 };
