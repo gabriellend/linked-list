@@ -31,3 +31,11 @@ const nodeAtOne = linkedList.at(1);
 console.log({ nodeAtOne });
 const nodeDoesntExist = linkedList.at(5);
 console.log({ nodeDoesntExist });
+
+// Pop
+const sizeBeforePop = linkedList.size();
+console.log({ sizeBeforePop });
+const popped = linkedList.pop();
+console.log({ popped });
+const sizeAfterPop = linkedList.size();
+console.log({ sizeAfterPop });

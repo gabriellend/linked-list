@@ -69,6 +69,30 @@ export const createLinkedList = () => {
     return null;
   };
 
+  const pop = () => {
+    // Empty list
+    if (!head) return null;
+
+    // List with one node
+    let popped;
+    if (head === tail) {
+      popped = head;
+      head = null;
+      tail = null;
+      return popped;
+    }
+
+    let current = head;
+    while (current.next !== tail) {
+      current = current.next;
+    }
+    popped = tail;
+    tail = current;
+    tail.next = null;
+
+    return popped;
+  };
+
   return {
     prepend,
     append,
@@ -77,5 +101,6 @@ export const createLinkedList = () => {
     getTail,
     size,
     at,
+    pop,
   };
 };
