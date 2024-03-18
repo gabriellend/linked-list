@@ -27,7 +27,26 @@ export const createLinkedList = () => {
   };
 
   const print = () => {
-    console.log(head);
+    if (!head) {
+      console.log("Empty list");
+      return;
+    }
+
+    let current = head;
+    let listString = "";
+
+    while (current) {
+      listString += `(${current.value})`;
+      if (current.next) {
+        listString += " -> ";
+      } else {
+        listString += " -> null";
+      }
+
+      current = current.next;
+    }
+
+    console.log(listString);
   };
 
   const getHead = () => {
