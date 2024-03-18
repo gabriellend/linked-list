@@ -39,3 +39,7 @@ const popped = linkedList.pop();
 console.log({ popped });
 const sizeAfterPop = linkedList.size();
 console.log({ sizeAfterPop });
+
+// Contains
+const containsOne = linkedList.contains(1);
+console.log({ containsOne });

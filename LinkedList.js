@@ -93,6 +93,23 @@ export const createLinkedList = () => {
     return popped;
   };
 
+  const contains = (val) => {
+    // Empty list
+    if (!head) {
+      return false;
+    }
+
+    let current = head;
+    while (current) {
+      if (current.value === val) {
+        return true;
+      }
+      current = current.next;
+    }
+
+    return false;
+  };
+
   return {
     prepend,
     append,
@@ -102,5 +119,6 @@ export const createLinkedList = () => {
     size,
     at,
     pop,
+    contains,
   };
 };
