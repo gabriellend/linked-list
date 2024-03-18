@@ -110,6 +110,25 @@ export const createLinkedList = () => {
     return false;
   };
 
+  const find = (val) => {
+    // Empty list
+    if (!head) {
+      return null;
+    }
+
+    let index = 0;
+    let current = head;
+    while (current) {
+      if (current.value === val) {
+        return index;
+      }
+      index++;
+      current = current.next;
+    }
+
+    return null;
+  };
+
   return {
     prepend,
     append,
@@ -120,5 +139,6 @@ export const createLinkedList = () => {
     at,
     pop,
     contains,
+    find,
   };
 };
