@@ -30,9 +30,21 @@ export const createLinkedList = () => {
     console.log(head);
   };
 
+  const size = () => {
+    let count = 0;
+    let current = head;
+
+    while (current) {
+      count++;
+      current = current.next;
+    }
+    console.log(count);
+  };
+
   return {
     prepend,
     append,
     print,
+    size,
   };
 };

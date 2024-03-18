@@ -11,3 +11,6 @@ linkedList.print();
 // Prepend
 linkedList.prepend(0);
 linkedList.print();
+
+// Show size
+linkedList.size();
