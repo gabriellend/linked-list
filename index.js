@@ -47,3 +47,11 @@ console.log({ containsOne });
 // Find
 const index = linkedList.find(1);
 console.log({ index });
+
+// Insert at
+linkedList.insertAt(7, 2);
+linkedList.print();
+
+// Remove at
+linkedList.removeAt(2);
+linkedList.print();

@@ -148,6 +148,75 @@ export const createLinkedList = () => {
     return null;
   };
 
+  const insertAt = (val, i) => {
+    if (i < 0 || !Number.isInteger(i)) {
+      return null;
+    }
+
+    const newNode = createNode(val);
+
+    // Empty list or inserting at first index
+    if (!head || i === 0) {
+      newNode.next = head;
+      head = newNode;
+      if (!tail) {
+        tail = newNode;
+      }
+      return;
+    }
+
+    // Index is greater than/equal to the length of the list
+    if (i >= size()) {
+      tail.next = newNode;
+      tail = newNode;
+      return;
+    }
+
+    let current = head;
+    let parent = null;
+    let index = 0;
+    while (current && index < i) {
+      parent = current;
+      current = current.next;
+      index++;
+    }
+
+    parent.next = newNode;
+    newNode.next = current;
+  };
+
+  const removeAt = (i) => {
+    // Check for invalid index, empty list, or index out of bounds
+    if (i < 0 || !Number.isInteger(i) || !head || i >= size()) {
+      return null;
+    }
+
+    // Remove first node
+    if (i === 0) {
+      head = head.next;
+
+      // If list is empty after removal
+      if (!head) {
+        tail = null;
+      }
+      return;
+    }
+
+    let current = head;
+    let parent = null;
+    let index = 0;
+    while (current && index < i) {
+      parent = current;
+      current = current.next;
+      index++;
+    }
+
+    parent.next = current.next;
+    if (current.next === null) {
+      tail = parent;
+    }
+  };
+
   return {
     prepend,
     append,
@@ -159,5 +228,7 @@ export const createLinkedList = () => {
     pop,
     contains,
     find,
+    insertAt,
+    removeAt,
   };
 };
