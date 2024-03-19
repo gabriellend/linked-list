@@ -3,13 +3,16 @@ import { createLinkedList } from "./LinkedList.js";
 const linkedList = createLinkedList();
 
 // Append
-linkedList.append(1);
+console.log("APPEND FIRST NODE");
+linkedList.append("b");
 linkedList.print();
-linkedList.append(2);
+console.log("APPEND SECOND NODE");
+linkedList.append("c");
 linkedList.print();
 
 // Prepend
-linkedList.prepend(0);
+console.log("PREPEND THIRD NODE");
+linkedList.prepend("a");
 linkedList.print();
 
 // Show size
@@ -35,23 +38,29 @@ console.log({ nodeDoesntExist });
 // Pop
 const sizeBeforePop = linkedList.size();
 console.log({ sizeBeforePop });
+linkedList.print();
 const popped = linkedList.pop();
 console.log({ popped });
+linkedList.print();
 const sizeAfterPop = linkedList.size();
 console.log({ sizeAfterPop });
 
 // Contains
-const containsOne = linkedList.contains(1);
-console.log({ containsOne });
+const containsB = linkedList.contains("b");
+console.log({ containsB });
+const containsC = linkedList.contains("c");
+console.log({ containsC });
 
 // Find
-const index = linkedList.find(1);
-console.log({ index });
+const indexOfA = linkedList.find("a");
+console.log({ indexOfA });
 
 // Insert at
-linkedList.insertAt(7, 2);
+console.log("INSERTING Z AT INDEX 2");
+linkedList.insertAt("z", 2);
 linkedList.print();
 
 // Remove at
+console.log("REMOVING ITEM AT INDEX 2");
 linkedList.removeAt(2);
 linkedList.print();
